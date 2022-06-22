@@ -18,8 +18,8 @@ BQ_PROJECT = "de-zoomcamp-349913"
 BQ_DATASET = "trips_data_all"
 
 BQ_SOURCE_TABLE = "source_list"
-BQ_WWX_SOURCE_TABLE = "wine_price"
-BQ_OTHERS_SOURCE_TABLE = "wwx_selected_wine_price"
+BQ_a_SOURCE_TABLE = "wine_price"
+BQ_OTHERS_SOURCE_TABLE = "a_selected_wine_price"
 BQ_WORKING_1_TABLE = "all_price_working_1_airflow"
 BQ_WORKING_2_TABLE = "all_price_working_2_airflow"
 BQ_WORKING_3_TABLE = "all_price_working_3_airflow"
@@ -31,12 +31,12 @@ TEMPLATE_SEARCH_PATH = "/opt/airflow/data/all_price"
 BATCH_DATE = (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=1)).strftime('%Y-%m-%d')
 SIX_MONTH_DATE = (datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d')
 
-def read_table(ti, include_wwx, bq_project_name, bq_dataset_name, bq_table_name, location):
+def read_table(ti, include_a, bq_project_name, bq_dataset_name, bq_table_name, location):
     client = bigquery.Client(location=location, project=bq_project_name)
-    if include_wwx:
+    if include_a:
         source_list_query = f"select source from {bq_dataset_name}.{bq_table_name}"
     else:
-        source_list_query = f"select source from {bq_dataset_name}.{bq_table_name} where source <> 'wwx'"
+        source_list_query = f"select source from {bq_dataset_name}.{bq_table_name} where source <> 'a'"
     source_list_job = client.query(source_list_query)
     source_list = []
     for row in source_list_job:
@@ -45,14 +45,14 @@ def read_table(ti, include_wwx, bq_project_name, bq_dataset_name, bq_table_name,
     source_str = '", "'.join(str(x) for x in source_list)
     data = json.loads('{"source": ["' + source_str + '"]}')
     # push to XCom using return
-    if include_wwx:
+    if include_a:
         ti.xcom_push("list_of_sources", data)
     else:
         ti.xcom_push("list_of_others_sources", data)
     return data
 
-def process_obtained_data(ti, task_id, include_wwx):   
-    if include_wwx:
+def process_obtained_data(ti, task_id, include_a):   
+    if include_a:
         list_of_sources = ti.xcom_pull(task_id)
         Variable.set(key='list_of_sources',
                     value=list_of_sources['source'], serialize_json=True)
@@ -104,16 +104,16 @@ with DAG(
     )
 
     ### Task 2: Insert data from different sources ###
-    ## WWX ##
+    ## a ##
     INSERT_BQ_TBL_QUERY = (
         f"""INSERT INTO {BQ_DATASET}.{BQ_TARGET_TABLE} 
-        SELECT PRICE_DATE, WINE_ID, WINE_NAME, VINTAGE, PACKING_SIZE, 'wwx' AS SOURCE, PRICE_PER_BOTTLE, NULL, PRICE_FINAL_IS_FILLNA AS IS_FILLNA, ROW_NO_FOR_NULL, TRUE AS INCLUDE_FLAG, date('{BATCH_DATE}'), timestamp(%s) 
-        FROM {BQ_DATASET}.{BQ_WWX_SOURCE_TABLE} 
+        SELECT PRICE_DATE, WINE_ID, WINE_NAME, VINTAGE, PACKING_SIZE, 'a' AS SOURCE, PRICE_PER_BOTTLE, NULL, PRICE_FINAL_IS_FILLNA AS IS_FILLNA, ROW_NO_FOR_NULL, TRUE AS INCLUDE_FLAG, date('{BATCH_DATE}'), timestamp(%s) 
+        FROM {BQ_DATASET}.{BQ_a_SOURCE_TABLE} 
         WHERE PRICE_DATE >= '{SIX_MONTH_DATE}';"""
     )%("'"+datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')+"'")
 
-    bq_insert_wwx_into_table_task = BigQueryInsertJobOperator(
-        task_id=f"bq_insert_wwx_into_{BQ_TARGET_TABLE}_table_task",
+    bq_insert_a_into_table_task = BigQueryInsertJobOperator(
+        task_id=f"bq_insert_a_into_{BQ_TARGET_TABLE}_table_task",
         configuration={
             "query": {
                 "query": INSERT_BQ_TBL_QUERY,
@@ -126,7 +126,7 @@ with DAG(
         task_id='get_others_sources_list',
         python_callable=read_table,
         op_kwargs = {
-            "include_wwx": False,
+            "include_a": False,
             "bq_project_name": BQ_PROJECT,
             "bq_dataset_name": BQ_DATASET,
             "bq_table_name": BQ_SOURCE_TABLE,
@@ -139,7 +139,7 @@ with DAG(
         python_callable=process_obtained_data,
         op_kwargs = {
             "task_id": 'get_others_sources_list',
-            "include_wwx": False,
+            "include_a": False,
         }
     )
 
@@ -231,7 +231,7 @@ with DAG(
         task_id='get_sources_list',
         python_callable=read_table,
         op_kwargs = {
-            "include_wwx": True,
+            "include_a": True,
             "bq_project_name": BQ_PROJECT,
             "bq_dataset_name": BQ_DATASET,
             "bq_table_name": BQ_SOURCE_TABLE,
@@ -244,7 +244,7 @@ with DAG(
         python_callable=process_obtained_data,
         op_kwargs = {
             "task_id": 'get_sources_list',
-            "include_wwx": True,
+            "include_a": True,
         }
     )
 
@@ -347,7 +347,7 @@ with DAG(
 
 # DAG level dependencies
 start_email_task >> bq_delete_data_task \
->> bq_insert_wwx_into_table_task \
+>> bq_insert_a_into_table_task \
 >> get_others_sources_list_task >> process_others_source_list_task >> insert_others_into_table_tasks_group \
 >> bq_truncate_working_2_table_task >> bq_insert_into_working_2_table_task \
 >> bq_truncate_working_3_table_task >> get_sources_list_task >> process_source_list_task >> insert_into_table_tasks_group \
