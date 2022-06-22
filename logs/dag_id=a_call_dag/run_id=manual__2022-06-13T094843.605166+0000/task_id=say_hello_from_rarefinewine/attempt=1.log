@@ -1,0 +1,28 @@
+[2022-06-13 09:49:52,932] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_hello_from_rarefinewine manual__2022-06-13T09:48:43.605166+00:00 [queued]>
+[2022-06-13 09:49:52,955] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_hello_from_rarefinewine manual__2022-06-13T09:48:43.605166+00:00 [queued]>
+[2022-06-13 09:49:52,955] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:49:52,956] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:49:52,957] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:49:52,985] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_hello_from_rarefinewine> on 2022-06-13 09:48:43.605166+00:00
+[2022-06-13 09:49:52,994] {standard_task_runner.py:52} INFO - Started process 17292 to run task
+[2022-06-13 09:49:53,001] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'say_hello_from_rarefinewine', 'manual__2022-06-13T09:48:43.605166+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpan46yjei', '--error-file', '/tmp/tmplmcxlrto']
+[2022-06-13 09:49:53,002] {standard_task_runner.py:80} INFO - Job 110: Subtask say_hello_from_rarefinewine
+[2022-06-13 09:49:53,111] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.say_hello_from_rarefinewine manual__2022-06-13T09:48:43.605166+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:49:53,408] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=say_hello_from_rarefinewine
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:48:43.605166+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:48:43.605166+00:00
+[2022-06-13 09:49:53,412] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 09:49:53,415] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo hello from rarefinewine.']
+[2022-06-13 09:49:53,443] {subprocess.py:85} INFO - Output:
+[2022-06-13 09:49:53,447] {subprocess.py:92} INFO - hello from rarefinewine.
+[2022-06-13 09:49:53,448] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 09:49:53,527] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=say_hello_from_rarefinewine, execution_date=20220613T094843, start_date=20220613T094952, end_date=20220613T094953
+[2022-06-13 09:49:53,623] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:49:53,761] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2022-06-13 09:47:50,174] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_goodbye_from_cultwines manual__2022-06-13T09:46:28.875269+00:00 [queued]>
+[2022-06-13 09:47:50,231] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_goodbye_from_cultwines manual__2022-06-13T09:46:28.875269+00:00 [queued]>
+[2022-06-13 09:47:50,258] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:47:50,259] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:47:50,259] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:47:50,443] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_goodbye_from_cultwines> on 2022-06-13 09:46:28.875269+00:00
+[2022-06-13 09:47:50,467] {standard_task_runner.py:52} INFO - Started process 17136 to run task
+[2022-06-13 09:47:50,484] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'say_goodbye_from_cultwines', 'manual__2022-06-13T09:46:28.875269+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmp1tl2ptg4', '--error-file', '/tmp/tmpfv_c_nwe']
+[2022-06-13 09:47:50,487] {standard_task_runner.py:80} INFO - Job 92: Subtask say_goodbye_from_cultwines
+[2022-06-13 09:47:50,788] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.say_goodbye_from_cultwines manual__2022-06-13T09:46:28.875269+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:47:51,806] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=say_goodbye_from_cultwines
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:46:28.875269+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:46:28.875269+00:00
+[2022-06-13 09:47:51,819] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 09:47:51,822] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo goodbye from cultwines.']
+[2022-06-13 09:47:51,879] {subprocess.py:85} INFO - Output:
+[2022-06-13 09:47:51,885] {subprocess.py:92} INFO - goodbye from cultwines.
+[2022-06-13 09:47:51,886] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 09:47:52,515] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=say_goodbye_from_cultwines, execution_date=20220613T094628, start_date=20220613T094750, end_date=20220613T094752
+[2022-06-13 09:47:52,655] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:47:52,873] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

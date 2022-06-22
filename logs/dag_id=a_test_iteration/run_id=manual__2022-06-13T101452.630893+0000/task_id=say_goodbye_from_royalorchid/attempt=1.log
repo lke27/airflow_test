@@ -1,0 +1,28 @@
+[2022-06-13 10:19:47,609] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_royalorchid manual__2022-06-13T10:14:52.630893+00:00 [queued]>
+[2022-06-13 10:19:47,629] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_royalorchid manual__2022-06-13T10:14:52.630893+00:00 [queued]>
+[2022-06-13 10:19:47,629] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:19:47,630] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 10:19:47,631] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:19:47,658] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_goodbye_from_royalorchid> on 2022-06-13 10:14:52.630893+00:00
+[2022-06-13 10:19:47,679] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_test_iteration', 'say_goodbye_from_royalorchid', 'manual__2022-06-13T10:14:52.630893+00:00', '--job-id', '229', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpinibhjvg', '--error-file', '/tmp/tmpctu9rg0x']
+[2022-06-13 10:19:47,674] {standard_task_runner.py:52} INFO - Started process 18983 to run task
+[2022-06-13 10:19:47,682] {standard_task_runner.py:80} INFO - Job 229: Subtask say_goodbye_from_royalorchid
+[2022-06-13 10:19:47,868] {task_command.py:370} INFO - Running <TaskInstance: a_test_iteration.say_goodbye_from_royalorchid manual__2022-06-13T10:14:52.630893+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 10:19:48,181] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_test_iteration
+AIRFLOW_CTX_TASK_ID=say_goodbye_from_royalorchid
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T10:14:52.630893+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T10:14:52.630893+00:00
+[2022-06-13 10:19:48,188] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 10:19:48,190] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo goodbye from royalorchid.']
+[2022-06-13 10:19:48,228] {subprocess.py:85} INFO - Output:
+[2022-06-13 10:19:48,242] {subprocess.py:92} INFO - goodbye from royalorchid.
+[2022-06-13 10:19:48,243] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 10:19:48,393] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_test_iteration, task_id=say_goodbye_from_royalorchid, execution_date=20220613T101452, start_date=20220613T101947, end_date=20220613T101948
+[2022-06-13 10:19:48,480] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 10:19:48,668] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

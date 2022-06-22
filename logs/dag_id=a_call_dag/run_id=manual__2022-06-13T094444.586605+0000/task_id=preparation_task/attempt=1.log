@@ -1,0 +1,24 @@
+[2022-06-13 09:44:52,616] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.preparation_task manual__2022-06-13T09:44:44.586605+00:00 [queued]>
+[2022-06-13 09:44:52,637] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.preparation_task manual__2022-06-13T09:44:44.586605+00:00 [queued]>
+[2022-06-13 09:44:52,638] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:44:52,641] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:44:52,645] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:44:52,733] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): preparation_task> on 2022-06-13 09:44:44.586605+00:00
+[2022-06-13 09:44:52,762] {standard_task_runner.py:52} INFO - Started process 16885 to run task
+[2022-06-13 09:44:52,771] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'preparation_task', 'manual__2022-06-13T09:44:44.586605+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpwfw3qtu_', '--error-file', '/tmp/tmp7d91qk34']
+[2022-06-13 09:44:52,785] {standard_task_runner.py:80} INFO - Job 40: Subtask preparation_task
+[2022-06-13 09:44:53,080] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.preparation_task manual__2022-06-13T09:44:44.586605+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:44:53,445] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=preparation_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:44:44.586605+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:44:44.586605+00:00
+[2022-06-13 09:44:53,490] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-06-13 09:44:53,503] {python.py:173} INFO - Done. Returned value was: None
+[2022-06-13 09:44:53,539] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=preparation_task, execution_date=20220613T094444, start_date=20220613T094452, end_date=20220613T094453
+[2022-06-13 09:44:53,588] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:44:53,943] {local_task_job.py:273} INFO - 16 downstream tasks scheduled from follow-on schedule check

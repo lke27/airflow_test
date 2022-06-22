@@ -1,0 +1,28 @@
+[2022-06-13 09:52:33,712] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_hello_from_wwx manual__2022-06-13T09:51:17.544810+00:00 [queued]>
+[2022-06-13 09:52:33,726] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_hello_from_wwx manual__2022-06-13T09:51:17.544810+00:00 [queued]>
+[2022-06-13 09:52:33,727] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:52:33,727] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:52:33,727] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:52:33,745] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_hello_from_wwx> on 2022-06-13 09:51:17.544810+00:00
+[2022-06-13 09:52:33,750] {standard_task_runner.py:52} INFO - Started process 17528 to run task
+[2022-06-13 09:52:33,755] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'say_hello_from_wwx', 'manual__2022-06-13T09:51:17.544810+00:00', '--job-id', '146', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpdg9oro6w', '--error-file', '/tmp/tmpyeiugro2']
+[2022-06-13 09:52:33,756] {standard_task_runner.py:80} INFO - Job 146: Subtask say_hello_from_wwx
+[2022-06-13 09:52:33,827] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.say_hello_from_wwx manual__2022-06-13T09:51:17.544810+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:52:33,943] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=say_hello_from_wwx
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:51:17.544810+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:51:17.544810+00:00
+[2022-06-13 09:52:33,946] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 09:52:33,947] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo hello from wwx.']
+[2022-06-13 09:52:33,963] {subprocess.py:85} INFO - Output:
+[2022-06-13 09:52:33,966] {subprocess.py:92} INFO - hello from wwx.
+[2022-06-13 09:52:33,966] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 09:52:34,014] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=say_hello_from_wwx, execution_date=20220613T095117, start_date=20220613T095233, end_date=20220613T095234
+[2022-06-13 09:52:34,049] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:52:34,138] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

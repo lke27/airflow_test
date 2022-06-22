@@ -1,0 +1,28 @@
+[2022-06-13 09:47:36,982] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_goodbye_from_livex_market_price manual__2022-06-13T09:46:28.875269+00:00 [queued]>
+[2022-06-13 09:47:37,112] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.say_goodbye_from_livex_market_price manual__2022-06-13T09:46:28.875269+00:00 [queued]>
+[2022-06-13 09:47:37,157] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:47:37,158] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:47:37,165] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:47:37,355] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_goodbye_from_livex_market_price> on 2022-06-13 09:46:28.875269+00:00
+[2022-06-13 09:47:37,395] {standard_task_runner.py:52} INFO - Started process 17108 to run task
+[2022-06-13 09:47:37,585] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'say_goodbye_from_livex_market_price', 'manual__2022-06-13T09:46:28.875269+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpf2ktlzun', '--error-file', '/tmp/tmppokfgo1u']
+[2022-06-13 09:47:37,635] {standard_task_runner.py:80} INFO - Job 78: Subtask say_goodbye_from_livex_market_price
+[2022-06-13 09:47:38,618] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.say_goodbye_from_livex_market_price manual__2022-06-13T09:46:28.875269+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:47:39,513] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=say_goodbye_from_livex_market_price
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:46:28.875269+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:46:28.875269+00:00
+[2022-06-13 09:47:39,532] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 09:47:39,545] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo goodbye from livex_market_price.']
+[2022-06-13 09:47:39,655] {subprocess.py:85} INFO - Output:
+[2022-06-13 09:47:39,717] {subprocess.py:92} INFO - goodbye from livex_market_price.
+[2022-06-13 09:47:39,718] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 09:47:42,175] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=say_goodbye_from_livex_market_price, execution_date=20220613T094628, start_date=20220613T094736, end_date=20220613T094742
+[2022-06-13 09:47:42,385] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:47:48,354] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2022-06-13 10:16:22,704] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_pontiwine scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:16:22,729] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_pontiwine scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:16:22,732] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:16:22,733] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 10:16:22,734] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:16:22,768] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_goodbye_from_pontiwine> on 2022-06-09 00:00:00+00:00
+[2022-06-13 10:16:22,774] {standard_task_runner.py:52} INFO - Started process 18690 to run task
+[2022-06-13 10:16:22,779] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_test_iteration', 'say_goodbye_from_pontiwine', 'scheduled__2022-06-09T00:00:00+00:00', '--job-id', '183', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpo0m1jibh', '--error-file', '/tmp/tmph83zm48v']
+[2022-06-13 10:16:22,781] {standard_task_runner.py:80} INFO - Job 183: Subtask say_goodbye_from_pontiwine
+[2022-06-13 10:16:22,861] {task_command.py:370} INFO - Running <TaskInstance: a_test_iteration.say_goodbye_from_pontiwine scheduled__2022-06-09T00:00:00+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 10:16:22,948] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_test_iteration
+AIRFLOW_CTX_TASK_ID=say_goodbye_from_pontiwine
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-09T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-09T00:00:00+00:00
+[2022-06-13 10:16:22,950] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 10:16:22,951] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo goodbye from pontiwine.']
+[2022-06-13 10:16:22,962] {subprocess.py:85} INFO - Output:
+[2022-06-13 10:16:22,964] {subprocess.py:92} INFO - goodbye from pontiwine.
+[2022-06-13 10:16:22,964] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 10:16:23,008] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_test_iteration, task_id=say_goodbye_from_pontiwine, execution_date=20220609T000000, start_date=20220613T101622, end_date=20220613T101623
+[2022-06-13 10:16:23,034] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 10:16:23,090] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

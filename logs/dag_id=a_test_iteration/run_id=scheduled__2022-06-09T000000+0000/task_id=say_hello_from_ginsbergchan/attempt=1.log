@@ -1,0 +1,28 @@
+[2022-06-13 10:15:43,458] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_hello_from_ginsbergchan scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:15:43,486] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_hello_from_ginsbergchan scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:15:43,486] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:15:43,487] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 10:15:43,488] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:15:43,524] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_hello_from_ginsbergchan> on 2022-06-09 00:00:00+00:00
+[2022-06-13 10:15:43,534] {standard_task_runner.py:52} INFO - Started process 18635 to run task
+[2022-06-13 10:15:43,547] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_test_iteration', 'say_hello_from_ginsbergchan', 'scheduled__2022-06-09T00:00:00+00:00', '--job-id', '174', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpd7mfnq41', '--error-file', '/tmp/tmpyiycx3tf']
+[2022-06-13 10:15:43,549] {standard_task_runner.py:80} INFO - Job 174: Subtask say_hello_from_ginsbergchan
+[2022-06-13 10:15:43,707] {task_command.py:370} INFO - Running <TaskInstance: a_test_iteration.say_hello_from_ginsbergchan scheduled__2022-06-09T00:00:00+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 10:15:44,137] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_test_iteration
+AIRFLOW_CTX_TASK_ID=say_hello_from_ginsbergchan
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-09T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-09T00:00:00+00:00
+[2022-06-13 10:15:44,151] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 10:15:44,155] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo hello from ginsbergchan.']
+[2022-06-13 10:15:44,188] {subprocess.py:85} INFO - Output:
+[2022-06-13 10:15:44,203] {subprocess.py:92} INFO - hello from ginsbergchan.
+[2022-06-13 10:15:44,207] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 10:15:44,517] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_test_iteration, task_id=say_hello_from_ginsbergchan, execution_date=20220609T000000, start_date=20220613T101543, end_date=20220613T101544
+[2022-06-13 10:15:44,679] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 10:15:45,083] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

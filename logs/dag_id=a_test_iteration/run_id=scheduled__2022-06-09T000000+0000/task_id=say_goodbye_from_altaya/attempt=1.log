@@ -1,0 +1,28 @@
+[2022-06-13 10:17:13,591] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_altaya scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:17:13,611] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_test_iteration.say_goodbye_from_altaya scheduled__2022-06-09T00:00:00+00:00 [queued]>
+[2022-06-13 10:17:13,612] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:17:13,612] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 10:17:13,613] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 10:17:13,644] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): say_goodbye_from_altaya> on 2022-06-09 00:00:00+00:00
+[2022-06-13 10:17:13,651] {standard_task_runner.py:52} INFO - Started process 18759 to run task
+[2022-06-13 10:17:13,657] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_test_iteration', 'say_goodbye_from_altaya', 'scheduled__2022-06-09T00:00:00+00:00', '--job-id', '193', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmp1tykat3j', '--error-file', '/tmp/tmp160gzph7']
+[2022-06-13 10:17:13,658] {standard_task_runner.py:80} INFO - Job 193: Subtask say_goodbye_from_altaya
+[2022-06-13 10:17:13,781] {task_command.py:370} INFO - Running <TaskInstance: a_test_iteration.say_goodbye_from_altaya scheduled__2022-06-09T00:00:00+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 10:17:14,003] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_test_iteration
+AIRFLOW_CTX_TASK_ID=say_goodbye_from_altaya
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-09T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-09T00:00:00+00:00
+[2022-06-13 10:17:14,006] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-06-13 10:17:14,007] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo goodbye from altaya.']
+[2022-06-13 10:17:14,047] {subprocess.py:85} INFO - Output:
+[2022-06-13 10:17:14,060] {subprocess.py:92} INFO - goodbye from altaya.
+[2022-06-13 10:17:14,069] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-06-13 10:17:14,207] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_test_iteration, task_id=say_goodbye_from_altaya, execution_date=20220609T000000, start_date=20220613T101713, end_date=20220613T101714
+[2022-06-13 10:17:14,283] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 10:17:14,483] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

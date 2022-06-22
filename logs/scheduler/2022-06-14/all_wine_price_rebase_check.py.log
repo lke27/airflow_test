@@ -1,0 +1,11 @@
+[2022-06-14 09:30:08,692] {processor.py:153} INFO - Started process (PID=21068) to work on /opt/airflow/dags/all_wine_price_rebase_check.py
+[2022-06-14 09:30:08,693] {processor.py:641} INFO - Processing file /opt/airflow/dags/all_wine_price_rebase_check.py for tasks to queue
+[2022-06-14 09:30:08,693] {logging_mixin.py:115} INFO - [2022-06-14 09:30:08,693] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/all_wine_price_rebase_check.py
+[2022-06-14 09:30:09,488] {processor.py:651} INFO - DAG(s) dict_keys(['all_wine_price_rebase_airflow_check']) retrieved from /opt/airflow/dags/all_wine_price_rebase_check.py
+[2022-06-14 09:30:09,806] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,806] {manager.py:508} INFO - Created Permission View: can read on DAG:all_wine_price_rebase_airflow_check
+[2022-06-14 09:30:09,828] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,828] {manager.py:508} INFO - Created Permission View: can delete on DAG:all_wine_price_rebase_airflow_check
+[2022-06-14 09:30:09,846] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,846] {manager.py:508} INFO - Created Permission View: can edit on DAG:all_wine_price_rebase_airflow_check
+[2022-06-14 09:30:09,847] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,847] {dag.py:2379} INFO - Sync 1 DAGs
+[2022-06-14 09:30:09,866] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,866] {dag.py:2398} INFO - Creating ORM DAG for all_wine_price_rebase_airflow_check
+[2022-06-14 09:30:09,899] {logging_mixin.py:115} INFO - [2022-06-14 09:30:09,899] {dag.py:2931} INFO - Setting next_dagrun for all_wine_price_rebase_airflow_check to 2022-06-09T00:00:00+00:00, run_after=2022-06-09T00:00:00+00:00
+[2022-06-14 09:30:09,943] {processor.py:161} INFO - Processing /opt/airflow/dags/all_wine_price_rebase_check.py took 1.255 seconds

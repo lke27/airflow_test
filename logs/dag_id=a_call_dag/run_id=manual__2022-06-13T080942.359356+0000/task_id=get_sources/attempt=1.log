@@ -1,0 +1,53 @@
+[2022-06-13 08:09:44,959] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.get_sources manual__2022-06-13T08:09:42.359356+00:00 [queued]>
+[2022-06-13 08:09:44,999] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.get_sources manual__2022-06-13T08:09:42.359356+00:00 [queued]>
+[2022-06-13 08:09:45,009] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 08:09:45,010] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 08:09:45,035] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 08:09:45,105] {taskinstance.py:1377} INFO - Executing <Task(BigQueryToCloudStorageOperator): get_sources> on 2022-06-13 08:09:42.359356+00:00
+[2022-06-13 08:09:45,152] {standard_task_runner.py:52} INFO - Started process 12849 to run task
+[2022-06-13 08:09:45,164] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'get_sources', 'manual__2022-06-13T08:09:42.359356+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpb8nzkaoz', '--error-file', '/tmp/tmpxhe4zw67']
+[2022-06-13 08:09:45,166] {standard_task_runner.py:80} INFO - Job 17: Subtask get_sources
+[2022-06-13 08:09:45,469] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.get_sources manual__2022-06-13T08:09:42.359356+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 08:09:45,630] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=get_sources
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T08:09:42.359356+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T08:09:42.359356+00:00
+[2022-06-13 08:09:45,632] {bigquery_to_gcs.py:110} INFO - Executing extract of avid-ceiling-348503 + '.' + wwxt202204 + '.' + source_list into: gs://asia-east2-wwxt202204-97297697-bucket/data/source_list.json
+[2022-06-13 08:09:45,634] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2022-06-13 08:09:45,636] {base.py:68} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2022-06-13 08:09:45,638] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:1921: DeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+  "This method is deprecated. Please use `BigQueryHook.insert_job` method.", DeprecationWarning
+
+[2022-06-13 08:09:45,654] {bigquery.py:1538} INFO - Inserting job ***_1655107785653388_6fe84c2148dfe522447070458227002c
+[2022-06-13 08:09:46,381] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/bigquery_to_gcs.py", line 125, in execute
+    labels=self.labels,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1955, in run_extract
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 439, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1544, in insert_job
+    job.result(timeout=timeout, retry=retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 725, in result
+    self._begin(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 518, in _begin
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 288, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/avid-ceiling-348503/jobs?prettyPrint=false: Invalid project ID 'avid-ceiling-348503 + ''. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+[2022-06-13 08:09:46,407] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=a_call_dag, task_id=get_sources, execution_date=20220613T080942, start_date=20220613T080944, end_date=20220613T080946
+[2022-06-13 08:09:46,465] {standard_task_runner.py:97} ERROR - Failed to execute job 17 for task get_sources (400 POST https://bigquery.googleapis.com/bigquery/v2/projects/avid-ceiling-348503/jobs?prettyPrint=false: Invalid project ID 'avid-ceiling-348503 + ''. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; 12849)
+[2022-06-13 08:09:46,510] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-13 08:09:46,637] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

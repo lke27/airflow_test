@@ -1,0 +1,23 @@
+[2022-06-13 09:48:46,663] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.get_data manual__2022-06-13T09:48:43.605166+00:00 [queued]>
+[2022-06-13 09:48:46,677] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: a_call_dag.get_data manual__2022-06-13T09:48:43.605166+00:00 [queued]>
+[2022-06-13 09:48:46,678] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:48:46,678] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-06-13 09:48:46,679] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-13 09:48:46,701] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_data> on 2022-06-13 09:48:43.605166+00:00
+[2022-06-13 09:48:46,707] {standard_task_runner.py:52} INFO - Started process 17185 to run task
+[2022-06-13 09:48:46,712] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'a_call_dag', 'get_data', 'manual__2022-06-13T09:48:43.605166+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/call_dag.py', '--cfg-path', '/tmp/tmpkk63iosc', '--error-file', '/tmp/tmpgxfqt6mu']
+[2022-06-13 09:48:46,715] {standard_task_runner.py:80} INFO - Job 94: Subtask get_data
+[2022-06-13 09:48:46,802] {task_command.py:370} INFO - Running <TaskInstance: a_call_dag.get_data manual__2022-06-13T09:48:43.605166+00:00 [running]> on host 8ef6f3d8e77e
+[2022-06-13 09:48:46,906] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=a_call_dag
+AIRFLOW_CTX_TASK_ID=get_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-13T09:48:43.605166+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-06-13T09:48:43.605166+00:00
+[2022-06-13 09:48:47,770] {python.py:173} INFO - Done. Returned value was: {'source': ['altaya', 'ginsbergchan', 'finewineexperience', 'jebsen', 'cruworldwine', 'rarefinewine', 'livex_market_price', 'vivinowines', 'wwx', 'winevault', 'pontiwine', 'royalorchid', 'bidvino', 'cultwines', 'wineparadise', 'wineview']}
+[2022-06-13 09:48:48,004] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=a_call_dag, task_id=get_data, execution_date=20220613T094843, start_date=20220613T094846, end_date=20220613T094848
+[2022-06-13 09:48:48,095] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-13 09:48:48,421] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
