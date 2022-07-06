@@ -82,7 +82,7 @@ with DAG(
 
     start_email_task = EmailOperator(
         task_id = "send_email",
-        to = ['lillian.ke@smartdatainstitute.com'],
+        to = [''],
         subject = "airflow task started",
         html_content = "<br>Job started at "+ datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S.%f') +".</br>",
     )
